@@ -1,0 +1,31 @@
+REPLACE THIS FILE WITH YOUR OWN CV (plain text).
+
+The contents of CV.txt are injected into the chatbot's system prompt as
+biographical context, so the bot can answer questions like "where did you do
+your PhD?" or "what is your research area?". Keep it plain text — no PDF, no
+Markdown formatting required.
+
+A simple structure works well:
+
+=== NAME ===
+Jane Q. Researcher
+
+=== CURRENT POSITION ===
+Assistant Professor of Computer Science, Example University
+
+=== RESEARCH INTERESTS ===
+Machine learning, causal inference, sequential decision-making.
+
+=== EDUCATION ===
+Ph.D. in Statistics, Example University, 2021
+B.S. in Mathematics, Another University, 2016
+
+=== SELECTED PUBLICATIONS ===
+- "A Title About Something Important", Conference on Things, 2024.
+- "Another Useful Paper", Journal of Results, 2023.
+
+=== CONTACT ===
+jane@example.edu
+
+(Tip: the full text of your papers goes in the data/ folder as separate .txt
+files — not here. This file is just the short biographical sketch.)

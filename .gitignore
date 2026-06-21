@@ -1,0 +1,33 @@
+# Secrets — never commit
+.env
+*.pem
+*.key
+
+# Local Q&A logs (uploaded to HF Dataset instead)
+logs/
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+build/
+dist/
+.venv/
+venv/
+env/
+
+# LlamaIndex / HF caches
+.cache/
+storage/
+*.lock
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+
+# zrok / ollama runtime logs (from the local-GPU box)
+*.log

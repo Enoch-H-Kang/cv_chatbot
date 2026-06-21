@@ -1,0 +1,44 @@
+REPLACE THIS WITH THE TEXT OF ONE OF YOUR PAPERS.
+
+Each .txt file you place in this `data/` folder becomes part of the chatbot's
+searchable knowledge base. Drop one file per paper (or per chapter / per
+section if your papers are long). Plain text only.
+
+How to get plain text from a PDF paper:
+  - From the terminal:  pdftotext paper.pdf paper.txt   (part of poppler-utils)
+  - Or use the helper script in this repo:  scripts/pdf_to_text.py
+  - Or copy-paste from the PDF into a .txt file as a last resort.
+
+Below is a tiny illustrative example so the index has something to build on
+during your first test run. Delete it once you add real papers.
+
+---
+
+Title: A Demonstration of Retrieval-Augmented Question Answering
+
+Abstract:
+This sample document exists only to verify that the chatbot can ingest a file,
+chunk it semantically, and retrieve relevant passages. Our toy "method" combines
+a vector retriever with a BM25 keyword retriever using reciprocal rank fusion.
+
+Introduction:
+Retrieval-Augmented Generation (RAG) grounds a language model's answers in a
+specific corpus. Instead of relying on the model's parametric memory, the system
+fetches relevant text at query time and instructs the model to answer using only
+that text. This reduces hallucination and lets the model discuss documents it was
+never trained on.
+
+Method:
+We embed each chunk with a small sentence-embedding model, then retrieve the
+top-k chunks for a query using two complementary signals: dense vector similarity
+(captures meaning) and BM25 (captures exact keywords). The two ranked lists are
+merged with reciprocal rank fusion.
+
+Results:
+On this single toy document, the system correctly answers questions such as
+"what fusion method is used?" (answer: reciprocal rank fusion) and "what are the
+two retrieval signals?" (answer: dense vector similarity and BM25).
+
+Conclusion:
+Replace this file with your real publications to give the chatbot something
+meaningful to talk about.

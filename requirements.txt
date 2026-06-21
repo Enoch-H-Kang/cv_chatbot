@@ -1,0 +1,14 @@
+# Web UI
+streamlit>=1.39.0
+
+# RAG framework (LlamaIndex) — core + the specific integrations we use
+llama-index-core>=0.11.0
+llama-index-llms-ollama>=0.3.0
+llama-index-embeddings-huggingface>=0.3.0
+llama-index-retrievers-bm25>=0.3.0
+
+# Hugging Face Hub client (used for optional Q&A logging to a Dataset)
+huggingface-hub>=0.25.0
+
+# HTTP client (used by the custom Ollama tunnel client)
+httpx>=0.27.0

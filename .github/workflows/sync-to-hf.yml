@@ -1,0 +1,51 @@
+# Optional: automatically push commits on `main` to your Hugging Face Space.
+#
+# This lets you keep the project on GitHub (with the tutorial README) while
+# mirroring to Hugging Face (which needs the Space metadata README). It swaps
+# src/README_SPACE.md into place as README.md before pushing, so the Space gets
+# its required YAML header without disturbing your GitHub README.
+#
+# SETUP:
+#   1. Create a Hugging Face write token: https://huggingface.co/settings/tokens
+#   2. In your GitHub repo: Settings -> Secrets and variables -> Actions ->
+#      add a secret named HF_TOKEN with that token.
+#   3. Edit HF_SPACE below to "<your-username>/<your-space-name>".
+#
+# After that, every push to main updates your Space automatically.
+
+name: Sync to Hugging Face Space
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:   # allows manual runs from the Actions tab
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          lfs: true
+
+      - name: Swap in the Space README (with HF metadata header)
+        run: |
+          if [ -f src/README_SPACE.md ]; then
+            cp src/README_SPACE.md README.md
+            git config user.name "github-actions"
+            git config user.email "github-actions@github.com"
+            git add README.md
+            git commit -m "ci: use Space README for HF" || echo "no changes"
+          fi
+
+      - name: Push to Hugging Face Space
+        env:
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}
+          # ⬇️ EDIT THIS to your Space, e.g. janedoe/researchbot
+          HF_SPACE: your-username/your-space-name
+        run: |
+          git push --force \
+            "https://user:${HF_TOKEN}@huggingface.co/spaces/${HF_SPACE}" \
+            HEAD:main
