@@ -3,6 +3,11 @@
 <p align="center">
   <img src="https://raw.githubusercontent.com/Enoch-H-Kang/cv_chatbot/main/docs/example_bot.png" alt="Research chatbot demo" width="700"/>
 </p>
+<p align="center">
+  <a href="https://sites.google.com/view/hyunwookkang/ask-the-chatbot">🤖 Try the live chatbot here</a>
+</p>
+
+<br>
 
 A complete, free-to-host chatbot that answers questions about **your** research
 papers — grounded in your actual publications, speaking in your voice, and
