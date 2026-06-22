@@ -9,8 +9,8 @@
 
 <br>
 
-A complete, free-to-host chatbot that answers questions about **your** research
-papers — grounded in your actual publications, speaking in your voice, and
+A complete, free-to-host chatbot that answers questions about **your** projects or research
+papers — grounded in your actual projects/publications, speaking in your voice, and
 powered by a large language model running on **your own GPU** instead of a paid
 API.
 
