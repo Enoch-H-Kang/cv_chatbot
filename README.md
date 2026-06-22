@@ -1,4 +1,4 @@
-# 🧑‍🔬 Build a Personalized Research Chatbot
+# 🧑‍🔬 Build a Personalized CV Chatbot
 
 <p align="center">
   <img src="https://raw.githubusercontent.com/Enoch-H-Kang/cv_chatbot/main/docs/example_bot.png" alt="Research chatbot demo" width="700"/>
